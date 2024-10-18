@@ -11,9 +11,11 @@ export default function Login() {
     return(
         <div className="container-login">
             <form className='form'>
-                <h1>Login</h1>
+                <div className="title">
+                    <h1>Log In</h1>
+                </div>
 
-                <div className="inputs">
+                <div className="inputs-login">
                     <input 
                         type='email' 
                         className='input-email'
@@ -32,9 +34,13 @@ export default function Login() {
 
                     <div className='buttons'>
                         <Link to='/access'>
-                            <button className='send'>Entrar</button>
+                            <input type='button' className='send' value='Entrar'/>
                         </Link>
                     </div>
+                </div>
+
+                <div className="toCadastro">
+                    <span>Ainda não tem uma conta?</span> <Link to='/cadastro'>Cadastrar-se</Link>
                 </div>
             </form>
         </div>

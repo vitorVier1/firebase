@@ -4,7 +4,7 @@ import './header.css'
 export default function Header() {
     return(
         <header>
-            <Link to='/'>Cadastrar</Link>
+            <Link to='/cadastro'>Cadastrar</Link>
             <Link to='/login'>Login</Link>
         </header>
     )

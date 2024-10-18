@@ -7,3 +7,24 @@
     margin: 0 auto;
     background: #F4F3EE;
 }
+
+.inputs-login {
+    position: absolute;
+    bottom: 40%;
+}
+
+.toCadastro {
+    position: absolute;
+    bottom: 12%;
+}
+
+.toCadastro a {
+    text-decoration: none;
+    color: #0155af;
+}
+
+.toCadastro a:hover {
+    font-weight: 500;
+    filter: brightness(80%);
+    text-decoration: underline;
+}

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom"; 
 
 import Header from "./components/Header";
 
@@ -12,7 +12,8 @@ export default function RoutesApp() {
         <BrowserRouter>
             <Header/>
             <Routes>
-                <Route path="/" element={ <Cadastros />} />
+                <Route path="/" element={ <Cadastros/> } />
+                <Route path="/cadastro" element={ <Cadastros />} />
                 <Route path="/login" element={ <Login />} />
                 <Route path="/access" element={ <Access />} />
                 <Route path="*" element={ <Error />} />

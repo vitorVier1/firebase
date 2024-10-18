@@ -18,4 +18,9 @@ header {
 header a {
     color: whitesmoke;
     text-decoration: none;
+    transition: all .3s;
+}
+
+header a:hover {
+    color: #007afc;
 }

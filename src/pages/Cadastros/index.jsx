@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { db } from '../../dbConnection';
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { collection, addDoc } from 'firebase/firestore'
 
 import './cadastros.css';
@@ -34,7 +35,9 @@ export default function Cadastros() {
         <div className="container-cadastros">
             <form className='form'>
                 <div className='inputs'>
-                    <h1>Cadastro</h1>
+                    <div className="title">
+                        <h1>Cadastro</h1>
+                    </div>
 
                     <input 
                         type='text' 
@@ -69,8 +72,12 @@ export default function Cadastros() {
                     />
 
                     <div className='buttons'>
-                        <button onClick={handleRegister} className='send'>Enviar</button>
+                        <input type='button' onClick={handleRegister} className='send' value='Enviar' />
                     </div>
+                </div>
+
+                <div className="toLogin">
+                    <span>Já tem uma conta?</span> <Link to='/login'>Faça Login</Link>
                 </div>
             </form>
         </div>
