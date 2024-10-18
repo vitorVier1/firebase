@@ -69,7 +69,6 @@ export default function Cadastros() {
                     />
 
                     <div className='buttons'>
-                        <button type='reset'>Limpar</button>
                         <button onClick={handleRegister} className='send'>Enviar</button>
                     </div>
                 </div>

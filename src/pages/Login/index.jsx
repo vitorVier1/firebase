@@ -1,6 +1,7 @@
 import './login.css';
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
     
@@ -30,8 +31,9 @@ export default function Login() {
                     />
 
                     <div className='buttons'>
-                        <button type='reset'>Limpar</button>
-                        <button className='send'>Entrar</button>
+                        <Link to='#'>
+                            <button className='send'>Entrar</button>
+                        </Link>
                     </div>
                 </div>
             </form>
