@@ -31,7 +31,7 @@ export default function Login() {
                     />
 
                     <div className='buttons'>
-                        <Link to='#'>
+                        <Link to='/access'>
                             <button className='send'>Entrar</button>
                         </Link>
                     </div>

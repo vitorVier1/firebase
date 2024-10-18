@@ -1,9 +1,22 @@
-.teste {
-    width: 550px;
-    height: 100px;
+.container-error {
+    width: 100%;
+    height: calc(100vh - 60px);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
-    background: #d42929;
+    margin: 0 auto;
+    background: #F4F3EE;
+}
+
+.error-message {
+    text-align: center;
+}
+
+.error-message h2 {
+    font-size: 50pt;
+    font-weight: bold;
+}
+
+p {
+    font-weight: 500;
 }

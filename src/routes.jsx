@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Cadastros from "./pages/Cadastros";
 import Login from "./pages/Login";
 import Error from "./pages/Error";
+import Access from "./pages/Access"
 
 export default function RoutesApp() {
     return(
@@ -13,6 +14,7 @@ export default function RoutesApp() {
             <Routes>
                 <Route path="/" element={ <Cadastros />} />
                 <Route path="/login" element={ <Login />} />
+                <Route path="/access" element={ <Access />} />
                 <Route path="*" element={ <Error />} />
             </Routes>
         </BrowserRouter>
