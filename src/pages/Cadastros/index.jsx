@@ -1,11 +1,12 @@
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
-import { db } from '../../dbConnection';
+import { db, auth } from '../../dbConnection';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+// import { collection, addDoc } from 'firebase/firestore';
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { collection, addDoc } from 'firebase/firestore'
 
 import './cadastros.css';
 
@@ -16,18 +17,21 @@ export default function Cadastros() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    async function handleRegister() {
-        await addDoc(collection(db, "cadastros"), {
-            name: name,
-            lastName: lastName,
-            email: email,
-            password: password
-        })
+    async function registerUser() {
+        await createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
             toast.success('Conta cadastrada com sucesso!')
+            setName('')
+            setLastName('')
+            setEmail('')
+            setPassword('')
         })
-        .catch(() => {
-            toast.warn('Erro')
+        .catch((error) => {
+            if(error.code === 'auth/weak-password') {
+                toast.error('Senha Fraca!')
+            } else if(error.code === 'auth/email-already-in-use') {
+                toast.error('E-mail já existente!')
+            }
         })
     }
     
@@ -72,7 +76,7 @@ export default function Cadastros() {
                     />
 
                     <div className='buttons'>
-                        <input type='button' onClick={handleRegister} className='send' value='Enviar' />
+                        <input type='button' onClick={registerUser} className='send' value='Enviar' />
                     </div>
                 </div>
 
