@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 
 import { db, auth } from '../../dbConnection';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 // import { collection, addDoc } from 'firebase/firestore';
 
 import { useState } from 'react';
