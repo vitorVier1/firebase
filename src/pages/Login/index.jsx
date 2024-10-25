@@ -60,10 +60,13 @@ export default function Login() {
 
     // Deslogar usuário
     async function logOut() {
-        await signOut(auth) 
-        setUser(false)
-        setUserDetail({})
-        toast.warn("Usuario deslogado")
+        if(!user) {toast.warn("Não há usuário logado")}
+        else{
+            await signOut(auth) 
+            setUser(false)
+            setUserDetail({})
+            toast.success("Usuario deslogado")
+        }
     }
 
     return(
